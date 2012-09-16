@@ -15,8 +15,10 @@
   <body>
     <div id="container">
       <p>Enter a string and I will find the longest palindrome<p>
-      <input id="user-input" type="text" placeholder="Your string..." />
-      <button id="submit" class="btn btn-inverse"><i class="icon-search icon-white"></i></button>
+      <form class="form-horizontal">
+        <input id="user-input" type="text" placeholder="Your string..." />
+        <button type="button" id="submit" class="btn btn-inverse"><i class="icon-search icon-white"></i></button>
+      </form>
       <p id="message">And the winner is: <span id="answer"></span><p>
     </div>
   </body>
