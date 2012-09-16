@@ -33,6 +33,8 @@
       seg = str.slice(i);
       if (seg.length > longest.length) {
         findMatches(seg);
+      } else {
+        break;
       }
     }
     return longest || noPalindromes;
@@ -52,19 +54,19 @@
       var noSpaces;
       noSpaces = $input.val().replace(/\s/g, "");
       $answer.html(longestPalindrome(noSpaces));
-      return $message.show();
+      $message.show();
     };
     $input.on("keydown", function(e) {
       if (e.which === 13) {
         $input.blur();
-        return showTheStuff();
+        showTheStuff();
       }
     });
     $input.on("focus", function() {
       $(this).val("");
-      return $message.fadeOut(200);
+      $message.fadeOut(200);
     });
-    return $button.on("click", showTheStuff);
+    $button.on("click", showTheStuff);
   });
 
 }).call(this);

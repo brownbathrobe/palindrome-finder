@@ -20,13 +20,15 @@ longestPalindrome = (str) ->
 
   for ltr, i in str
     seg = str.slice i
-    findMatches seg if seg.length > longest.length
+    if seg.length > longest.length
+      findMatches seg
+    else
+      break
 
   longest || noPalindromes
 
 isPalindrome = (str) ->
   str == str.split("").reverse().join("")
-
 
 $ () ->
 
@@ -39,14 +41,18 @@ $ () ->
     noSpaces = $input.val().replace /\s/g, ""
     $answer.html longestPalindrome noSpaces
     $message.show()
+    return
 
   $input.on "keydown", (e) ->
     if e.which == 13
       $input.blur()
       showTheStuff()
+      return
 
   $input.on "focus", () ->
     $(@).val ""
     $message.fadeOut 200
+    return
 
   $button.on "click", showTheStuff
+  return
