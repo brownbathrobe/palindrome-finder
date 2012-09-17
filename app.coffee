@@ -7,21 +7,18 @@ longestPalindrome = (str) ->
 
     if lastIndex > 0
       substr = str.slice 0, lastIndex + 1
-      if substr.length <= longest.length
-        return
-      else
-        if isPalindrome substr
-          longest = substr
-          return
+      if substr.length > longest.length
+        return substr if isPalindrome substr
 
       findMatches str, lastIndex - 1
+      return
 
   return str if str.length == 1
 
   for ltr, i in str
     seg = str.slice i
     if seg.length > longest.length
-      findMatches seg
+      longest = findMatches(seg) || longest
     else
       break
 

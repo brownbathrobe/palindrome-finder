@@ -14,15 +14,12 @@
       lastIndex = str.lastIndexOf(str[0], cutoff);
       if (lastIndex > 0) {
         substr = str.slice(0, lastIndex + 1);
-        if (substr.length <= longest.length) {
-          return;
-        } else {
+        if (substr.length > longest.length) {
           if (isPalindrome(substr)) {
-            longest = substr;
-            return;
+            return substr;
           }
         }
-        return findMatches(str, lastIndex - 1);
+        findMatches(str, lastIndex - 1);
       }
     };
     if (str.length === 1) {
@@ -32,7 +29,7 @@
       ltr = str[i];
       seg = str.slice(i);
       if (seg.length > longest.length) {
-        findMatches(seg);
+        longest = findMatches(seg) || longest;
       } else {
         break;
       }
