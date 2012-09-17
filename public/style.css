@@ -1,0 +1,4 @@
+#container { width: 600px; margin: 100px auto; }
+#user-input { width: 300px; }
+#answer { color: red; }
+#message { display: none; }
