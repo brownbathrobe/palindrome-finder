@@ -1,4 +1,3 @@
-palindrome-finder
-=================
+## [palindrome-finder](http://palindrome-finder.herokuapp.com/) ##
 
-find the longest palindrome in a given string
+Find the longest palindrome in a given string...
