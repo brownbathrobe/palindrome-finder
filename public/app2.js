@@ -49,7 +49,7 @@
     return str === str.split("").reverse().join("");
   };
 
-  $(function() {
+  jQuery(function() {
     var $answer, $button, $input, $message, showTheStuff;
     $message = $("#message");
     $button = $("#submit");

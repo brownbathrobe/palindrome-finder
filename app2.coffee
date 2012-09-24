@@ -17,7 +17,6 @@ findLongestPalindrome = (str) ->
 
   longestPalindrome
 
-
 findPalindromeCandidate = (str, cutoff = str.length) ->
   lastIndexOfLetter = str.lastIndexOf str[0], cutoff-1
   if lastIndexOfLetter > 0
@@ -31,14 +30,14 @@ assessCandidate = (candidate, longestPalindrome) ->
 isPalindrome = (str) ->
   str == str.split("").reverse().join("")
 
-$ () ->
+jQuery ->
 
   $message = $("#message")
   $button  = $("#submit")
   $answer  = $("#answer")
   $input   = $("#user-input")
 
-  showTheStuff = () ->
+  showTheStuff = ->
     noSpaces = $input.val().replace /\s/g, ""
     $answer.html findLongestPalindrome(noSpaces) || "there are no palindromes"
     $message.show()
@@ -50,7 +49,7 @@ $ () ->
       showTheStuff()
       return
 
-  $input.on "focus", () ->
+  $input.on "focus", ->
     $(@).val ""
     $message.fadeOut 200
     return
